@@ -52,8 +52,24 @@ function buildNav(){
 }
 
 // Add class 'active' to section when near top of viewport
+function isActive(el){
+  let rect = el.getBoundingClientRect();
+  if (rect.top < 10){
+    return true;
+  }else {
+    return false;
+  }
+}
 
-
+function setCurrent(){
+  for (const section of sections){
+    if (isActive(section)=== true){
+      section.setAttribute('class','your-active-class');
+    }else {
+      section.removeAttribute('class','your-active-class');
+    }
+  }
+}
 // Scroll to anchor ID using scrollTO event
 
 
@@ -69,5 +85,10 @@ document.addEventListener("DOMContentLoaded",function (event){
 });
 
 // Scroll to section on link click
-
+window.addEventListener('click',function (event){
+  setCurrent();
+})
+window.addEventListener('scroll',function (event){
+  setCurrent();
+})
 // Set sections as active
