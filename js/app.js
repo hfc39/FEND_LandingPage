@@ -45,6 +45,7 @@ function buildNav(){
     sectionLink.textContent = sectionName;
     sectionLink.setAttribute('href','#'+section.id);
     sectionLink.setAttribute('class','menu__link');
+    sectionLink.setAttribute('data-nav',sectionName);
     navBar.appendChild(sectionItem);
     sectionItem.appendChild(sectionLink);
 
@@ -70,6 +71,7 @@ function setCurrent(){
     }
   }
 }
+
 // Scroll to anchor ID using scrollTO event
 
 
