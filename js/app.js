@@ -55,7 +55,7 @@ function buildNav(){
 // Add class 'active' to section when near top of viewport
 function isActive(el){
   let rect = el.getBoundingClientRect();
-  if (rect.top < 10){
+  if (rect.top < 7){
     return true;
   }else {
     return false;
